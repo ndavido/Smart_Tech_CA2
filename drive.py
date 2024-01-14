@@ -13,7 +13,7 @@ from matplotlib import image as mpimg
 
 sio = socketio.Server()
 app = Flask(__name__)
-speed_limit = 80
+speed_limit = 25
 
 
 def preprocess(img):
@@ -52,6 +52,6 @@ def connect(sid, environ):
 
 
 if __name__ == '__main__':
-    model = load_model('combined_data.h5')
+    model = load_model('combined_data2.h5')
     app = socketio.Middleware(sio, app)
     eventlet.wsgi.server(eventlet.listen(('', 4567)), app)
