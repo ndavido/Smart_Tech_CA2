@@ -52,6 +52,6 @@ def connect(sid, environ):
 
 
 if __name__ == '__main__':
-    model = load_model('combined_data2.h5')
+    model = load_model('first_working_model.h5')
     app = socketio.Middleware(sio, app)
     eventlet.wsgi.server(eventlet.listen(('', 4567)), app)
